@@ -63,8 +63,12 @@ while correctGuess == 0:
         else:
             print(f"Please choose an integer between 1 and 100")
 
+    except EOFError as e:
+        print(f"Looks like you wanted to get out of the game early!")
+        correctGuess = 1
+
     except Exception as e:
-        print(f"Oops! {e}")
+        print(f"Well... some type of error occurred.\nThank you for playing!")
         correctGuess = 1
 
 print(f"Game finished")
